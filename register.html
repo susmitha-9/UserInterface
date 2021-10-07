@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<header>
+    <div class="nav">
+        <a href="home">Home</a>
+        <a href="login">Login</a>
+        <a href="register">Register</a>
+
+
+    </div>
+
+</header>
+<br><br><br>
+<div class="content-section">
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="leg">
+            <legend class="legend">User Registration Form</legend>
+            <br>
+            <div class="user">
+                {{ form.username.label(class="form-control-label")}}
+            {% if form.username.errors %}
+                    {{ form.username(class="form-control form-control-lg is-invalid" )}}
+                <div class="invalid-feedback">
+                    {% for errors in form.username.errors %}
+                      <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                    {% else %}
+                    {{ form.username(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+            <div class="mail">
+                {{ form.email.label(class="form-control-label")}}
+            {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+
+            <div class="num">
+                {{ form.number.label(class="form-control-label")}}
+            {% if form.number.errors %}
+                        {{ form.number(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.number.errors %}
+                     <br><br><br><br><br><span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.number(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="loc">
+                {{ form.location.label(class="form-control-label")}}
+            {% if form.location.errors %}
+                        {{ form.location(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.location.errors %}
+                                <br><br><br><br><br><span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.location(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="pass">
+                {{ form.password.label(class="form-control-label")}}
+            {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                               <br><br><br><br><br> <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+            <div class="confirm-pass">
+                {{ form.confirm_password.label(class="form-control-label")}}
+            {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confirm_password.errors %}
+                               <br><br><br><br><br> <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="form-control form-control-lg") }}
+                    {% endif %}
+            </div>
+        </fieldset>
+        <br>
+        <div class="sub">
+            <button id="submit">
+            {{ form.submit(class="btn btn-outline-info") }}
+            </button>
+        </div>
+   </form>
+</div>
+<br>
+<div class="new">
+    <small class="text-muted">
+        Already Have a Account? <a class="ml-6" href="{{url_for('login')}}">Sign In</a>
+    </small><br><br><br>
+</div>
+<div class="button">
+    <h3>User Events</h3>
+    <p>
+		Sign Up Button Clicked <span
+		id="display">0</span> Times
+	</p>
+</div>
+
+<script type="text/javascript">
+		var count = 0;
+		var btn = document.getElementById("submit");
+		var disp = document.getElementById("display");
+
+        btn.onclick = function () {
+			count++;
+			disp.innerHTML = count;
+		}
+	</script>
+
+
+<style>
+.button{
+    text-align: center;
+    color:darkred;
+    font-family: "Bodoni MT Condensed",monospace;
+    font-size: 25px;
+
+}
+
+
+body{
+    background-color:floralwhite;
+    position: center;
+}
+.legend{
+    text-align:center;
+    font-size:25px;
+}
+.nav{
+    text-align:right;
+    color:black;
+    padding: 15px 20px;
+    font-size: 25px;
+    background-color:lightsteelblue;
+    overflow:hidden;
+    font-family: "Bodoni MT Condensed",monospace;
+}
+
+
+
+.invalid-feedback{
+    text-align:center;
+    text-decoration: underline;
+    color:#c5272e
+
+
+}
+
+.user{
+    text-align: center;
+    font-size:20px;
+    margin-right:0.5cm ;
+    height:0.9cm;
+    font-family: "Bodoni MT Condensed", fantasy;
+}
+.mail{
+    font-size:20px ;
+    text-align: center;
+    margin-right:0.1cm;
+    height:0.9cm;
+    font-family:"Bodoni MT Condensed",fantasy;
+}
+.num{
+    font-size:20px;
+    text-align:center;
+    margin-right: 0.2cm;
+    height:0.9cm;
+    font-family:"Bodoni MT Condensed",fantasy;
+}
+.loc {
+    text-align: center;
+    font-size:20px;
+    margin-right:0.1cm ;
+    height:0.9cm;
+    font-family:"Bodoni MT Condensed",fantasy;
+}
+.pass{
+    text-align: center;
+    font-size:20px;
+    height:0.9cm;
+    font-family:"Bodoni MT Condensed",fantasy;
+    margin-right:0.2cm;
+}
+.confirm-pass {
+    text-align: center;
+    font-size: 20px;
+    margin-right: 1.5cm;
+    height: 0.9cm;
+    font-family: "Bodoni MT Condensed", fantasy;
+}
+.new{
+    text-align: center;
+}
+.sub{
+    text-align: center;
+}
+
+</style>
+
+
+
+
+</body>
+</html>

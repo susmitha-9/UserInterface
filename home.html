@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<header>
+    <div class="nav">
+        <a href="home">Home</a>
+        <a href="login">Login</a>
+        <a href="register">Register</a>
+    </div>
+     <div class="alertms">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+     </div>
+</header>
+      <form action = "/setcookie" method = "POST">
+      </form>
+
+<h3>Web analytics</h3>
+<p>Analytics is the systematic computational analysis of data or statistics.[1] It is used for the discovery, interpretation, and communication of meaningful patterns in data. It also entails applying data patterns towards effective decision-making. It can be valuable in areas rich with recorded information; analytics relies on the simultaneous application of statistics, computer programming and operations research to quantify performance.
+
+Organizations may apply analytics to business data to describe, predict, and improve business performance. Specifically, areas within analytics include predictive analytics, prescriptive analytics, enterprise decision management, descriptive analytics, cognitive analytics, Big Data Analytics, retail analytics, supply chain analytics, store assortment and stock-keeping unit optimization, marketing optimization and marketing mix modeling, web analytics, call analytics, speech analytics, sales force sizing and optimization, price and promotion modeling, predictive science, graph analytics, credit risk analysis, and fraud analytics. Since analytics can require extensive computation (see big data), the algorithms and software used for analytics harness the most current methods in computer science, statistics, and mathematics</p>
+<br>
+<h3>Analytics Vs Analysis</h3>
+<p>Data analysis focuses on the process of examining past data through collection, inspection, modelling and questioning.[citation needed] It is a subset of data analytics, which takes multiple data analysis processes to focus on why an event happened and what may happen in the future based on the previous data.[3] Data analytics is used to formulate larger organization decisions.
+
+Data analytics is a multidisciplinary field. There is extensive use of computer skills, mathematics, statistics, the use of descriptive techniques and predictive models to gain valuable knowledge from data through analytics.[4] The insights from data are used to recommend action or to guide decision making rooted in the business context. Thus, analytics is not so much concerned with individual analyses or analysis steps, but with the entire methodology[according to whom?]. There is a pronounced tendency to use the term analytics in business settings e.g. text analytics vs. the more generic text mining to emphasize this broader perspective.[citation needed] There is an increasing use of the term advanced analytics, typically used to describe the technical aspects of analytics, especially in the emerging fields such as the use of machine learning techniques like neural networks, decision tree, logistic regression, linear to multiple regression analysis, classification to do predictive modeling.It also includes Unsupervised Machine learning techniques like cluster analysis, Principal Component Analysis, segmentation profile analysis and association analysis</p>
+<br>
+<h3>Challenges</h3>
+<p>In the industry of commercial analytics software, an emphasis has emerged on solving the challenges of analyzing massive, complex data sets, often when such data is in a constant state of change. Such data sets are commonly referred to as big data. Whereas once the problems posed by big data were only found in the scientific community, today big data is a problem for many businesses that operate transactional systems online and, as a result, amass large volumes of data quickly.[17]
+
+The analysis of unstructured data types is another challenge getting attention in the industry. Unstructured data differs from structured data in that its format varies widely and cannot be stored in traditional relational databases without significant effort at data transformation.[18] Sources of unstructured data, such as email, the contents of word processor documents, PDFs, geospatial data, etc., are rapidly becoming a relevant source of business intelligence for businesses, governments and universities.[19] For example, in Britain the discovery that one company was illegally selling fraudulent doctor's notes in order to assist people in defrauding employers and insurance companies,[20] is an opportunity for insurance firms to increase the vigilance of their unstructured data analysis. The McKinsey Global Institute estimates that big data analysis could save the American health care system $300 billion per year and the European public sector €250 billion.[21]
+
+These challenges are the current inspiration for much of the innovation in modern analytics information systems, giving birth to relatively new machine analysis concepts such as complex event processing, full text search and analysis, and even new ideas in presentation.[22] One such innovation is the introduction of grid-like architecture in machine analysis, allowing increases in the speed of massively parallel processing by distributing the workload to many computers all with equal access to the complete data set.[23]
+
+Analytics is increasingly used in education, particularly at the district and government office levels. However, the complexity of student performance measures presents challenges when educators try to understand and use analytics to discern patterns in student performance, predict graduation likelihood, improve chances of student success, etc. For example, in a study involving districts known for strong data use, 48% of teachers had difficulty posing questions prompted by data, 36% did not comprehend given data, and 52% incorrectly interpreted data.[24] To combat this, some analytics tools for educators adhere to an over-the-counter data format (embedding labels, supplemental documentation, and a help system, and making key package/display and content decisions) to improve educators' understanding and use of the analytics being displayed.[25]
+
+One more emerging challenge is dynamic regulatory needs. For example, in the banking industry, Basel III and future capital adequacy needs are likely to make even smaller banks adopt internal risk models. In such cases, cloud computing and open source programming language R can help smaller banks to adopt risk analytics and support branch level monitoring by applying predictive analytics.</p>
+<br>
+<h3>Risks</h3>
+<p>The main risk for the people is discrimination like price discrimination or statistical discrimination
+
+There is also the risk that a developer could profit from the ideas or work done by users, like this example: Users could write new ideas in a note taking app, which could then be sent as a custom event, and the developers could profit from those ideas. This can happen because the ownership of content is usually unclear in the law.[27]
+
+If a user's identity is not protected, there are more risks; for example, the risk that private information about users is made public on the internet.
+
+In the extreme, there is the risk that governments could gather too much private information, now that the governments are giving themselves more powers to access citizens' information.</p>
+
+</body>
+
+<style>
+    .nav{
+    text-align:right;
+    color:black;
+    padding: 15px 20px;
+    font-size: 25px;
+    background-color:lightsteelblue;
+    overflow:hidden;
+    font-family: "Bodoni MT Condensed",monospace;
+}
+.alertms {
+    text-align: center;
+    color: rgba(184, 16, 28, 0.8);
+}
+p{
+    color:blue;
+}
+h3{
+    color:red;
+}
+body{
+    background-color:floralwhite;
+}
+
+
+
+
+</style>
+
+</html>
